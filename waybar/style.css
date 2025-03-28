@@ -1,0 +1,240 @@
+@define-color bar-bg rgba(29, 32, 33, 1);
+@define-color cl rgba(235, 219, 178, 1);
+@define-color btn rgba(47, 50, 48, 1);
+@define-color w-btn-cl rgba(80, 73, 69, 1);
+@define-color btn-hvr rgba(78, 99, 91, 1);
+@define-color btn-ac rgba(78, 99, 91, 1);
+@define-color btn-r-cl rgba(29, 32, 33, 1);
+@define-color btn-r-b rgba(251, 73, 52, 1);
+
+@define-color pr-btn rgba(50, 48, 47, 1);
+@define-color pr-cl rgba(251, 73, 52, 1);
+
+* {
+  border: none;
+  border-radius: 0px;
+  font-family: JetBrainsMono Nerd Font;
+  font-weight: bold;
+  font-size: 15px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: @bar-bg;
+  color: @cl;
+}
+
+tooltip {
+  background: rgb(40, 40, 40);
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(29, 32, 33, 1);
+}
+
+#workspaces button {
+  padding: 0 0.4em;
+  color: @w-btn-cl;
+  border-radius: 6px;
+  margin-right: 2px;
+  margin-left: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+#workspaces button.active {
+  color: @cl;
+  background: @btn-ac;
+}
+
+#workspaces button.focused {
+  color: @cl;
+  background: @btn-ac;
+}
+
+#workspaces button.urgent {
+  color: @btn-r-cl;
+  background: @btn-r-b;
+}
+
+#workspaces button:hover {
+  background: @btn-hvr;
+  color: @cl;
+}
+
+#custom-power,
+#date,
+#backlight,
+#idle_inhibitor,
+#pulseaudio,
+#network,
+#custom-bluetooth,
+#workspaces,
+#mpd,
+#temperature,
+#clock,
+#tray,
+#battery {
+  background: @btn;
+  padding: 0 0.5em;
+  margin-right: 3px;
+  margin-left: 3px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border-radius: 6px;
+}
+
+#tray {
+  margin-right: 6px;
+}
+
+#network {
+  color: @cl;
+  margin-right: 6px;
+}
+
+#pulseaudio {
+  margin-right: 6px;
+  color: @cl;
+}
+
+#custom-power {
+  color: @pr-cl;
+  background: @pr-btn;
+}
+
+#clock {
+  color: @cl;
+  margin-right: 6px;
+}
+
+#mpd {
+  background: rgba(50, 48, 47, 1);
+  background-image: linear-gradient(62deg, rgba(50, 48, 47, 1) 0%, rgba(61, 61, 61, 1) 100%);
+  color: @cl;
+}
+
+#mpd.playing {
+  background: rgba(50, 48, 47, 1);
+  background-image: linear-gradient(62deg, rgba(50, 48, 47, 1) 0%, rgba(184, 187, 38, 0) 100%);
+  color: @cl;
+}
+
+#mpd.paused {
+  background: rgba(50, 48, 47, 1);
+  background-image: linear-gradient(62deg, rgba(50, 48, 47, 1) 0%, rgba(251, 73, 52, 0) 100%);
+  color: @cl;
+}
+
+#taskbar {
+  background: rgba(29, 32, 33, 1);
+  padding: 0 0.6em;
+  margin-right: 10px;
+  margin-left: 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border-radius: 6px;
+  color: @cl;
+}
+
+#taskbar button {
+  border-radius: 6px;
+  background: rgba(50, 48, 47, 1);
+  color: rgba(168, 153, 132, 1);
+  margin-right: 6px;
+}
+
+#taskbar button.minimized {
+  border-radius: 6px;
+  background: rgba(50, 48, 47, 1);
+  color: rgba(168, 153, 132, 1);
+}
+
+#taskbar button.active {
+  border-radius: 6px;
+  background: @btn-ac;
+  color: @cl;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 30%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient_f {
+  0% {
+    background-position: 0% 200%;
+  }
+
+  50% {
+    background-position: 200% 0%;
+  }
+
+  100% {
+    background-position: 400% 200%;
+  }
+}
+
+@keyframes gradient_f_nh {
+  0% {
+    background-position: 0% 200%;
+  }
+
+  100% {
+    background-position: 200% 200%;
+  }
+}
+
+#custom-music.low {
+  background: rgba(148, 226, 213, 1);
+  background: linear-gradient(52deg, rgba(148, 226, 213, 1) 0%, rgba(137, 220, 235, 1) 19%, rgba(116, 199, 236, 1) 43%, rgba(137, 180, 250, 1) 56%, rgba(180, 190, 254, 1) 80%, rgba(186, 187, 241, 1) 100%);
+  background-size: 300% 300%;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.377);
+  animation: gradient 15s ease infinite;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+}
+
+#custom-music.random {
+  background: rgba(148, 226, 213, 1);
+  background: radial-gradient(circle, rgba(148, 226, 213, 1) 0%, rgba(156, 227, 191, 1) 21%, rgba(249, 226, 175, 1) 34%, rgba(158, 227, 186, 1) 35%, rgba(163, 227, 169, 1) 59%, rgba(148, 226, 213, 1) 74%, rgba(164, 227, 167, 1) 74%, rgba(166, 227, 161, 1) 100%);
+  background-size: 400% 400%;
+  animation: gradient_f 4s ease infinite;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.377);
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+}
+
+#custom-music.critical {
+  background: rgba(235, 160, 172, 1);
+  background: linear-gradient(52deg, rgba(235, 160, 172, 1) 0%, rgba(243, 139, 168, 1) 30%, rgba(231, 130, 132, 1) 48%, rgba(250, 179, 135, 1) 77%, rgba(249, 226, 175, 1) 100%);
+  background-size: 300% 300%;
+  animation: gradient 15s cubic-bezier(.55, -0.68, .48, 1.68) infinite;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.377);
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+}
+
+#custom-music.Playing {
+  background: rgba(104, 157, 106, 1);
+  background: radial-gradient(circle, rgba(104, 157, 106, 0.47) 0%, @btn-ac 15%, rgba(66, 123, 88, 0.47) 25%, rgba(66, 123, 88, 0.47) 75%, rgba(104, 157, 106, 0.47) 100%);
+  background-size: 400% 400%;
+  animation: gradient_f 9s cubic-bezier(.72, .39, .21, 1) infinite;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.377);
+  font-weight: bold;
+  color: @cl;
+}
+
+#custom-music.Paused,
+#custom-music.Stopped {
+  background: rgba(66, 123, 88, 1);
+}
