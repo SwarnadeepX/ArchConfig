@@ -5,7 +5,7 @@
   
   "modules-left":   ["hyprland/workspaces","custom/playerctl"],
   "modules-center": ["clock"],
-  "modules-right":  ["tray", "idle_inhibitor","temperature", "backlight","pulseaudio", "custom/bluetooth","network", "battery", "custom/power"],
+  "modules-right":  ["tray", "idle_inhibitor", "backlight","pulseaudio", "custom/bluetooth","network", "battery", "custom/power"],
 
   "wlr/taskbar": {
 	"format": "{icon} {app_id}",
@@ -76,7 +76,7 @@
       "format-alt": "󰒢 {essid}", //{ifname} ({ipaddr})
     //"tooltip": false,
 	  //"tooltip-format-wifi": "signal strength: {signalstrength}% | down speed: {bandwidthdownbits}, up speed: {bandwidthupbits}",
-      "on-click-right": "exec nm-connection-editor"
+      "on-click-right": "sh /home/swarnadeep/.config/waybar/scripts/network-manager.sh"
   },
 
   "custom/bluetooth": {

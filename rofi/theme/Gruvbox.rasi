@@ -45,6 +45,7 @@
     selected-urgent-foreground:  @urgent-foreground;
 }
 
+
 configuration {
     modi: "drun,run";
     show-icons: true;

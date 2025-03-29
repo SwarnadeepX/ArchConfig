@@ -1,4 +1,4 @@
-@define-color bar-bg rgba(29, 32, 33, 1);
+@define-color bar-bg rgba(29, 32, 33, 0.7);
 @define-color cl rgba(235, 219, 178, 1);
 @define-color btn rgba(47, 50, 48, 1);
 @define-color w-btn-cl rgba(80, 73, 69, 1);
